@@ -1,0 +1,15 @@
+<h1>Home</h1>
+
+<ul>
+	<% @a.each do | elem |%>
+
+		<li><%= elem %></li>
+
+	<% end %>
+</ul>
+
+<% if @logged_in %>
+	<a href="#">Sign Out</a>
+<% else %>
+	<a href="#">Sign In</a>
+<% end %>
