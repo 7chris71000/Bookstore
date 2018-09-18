@@ -1,11 +1,25 @@
+
+<% books = Book.all %>
+
 <h1>Home</h1>
 
 <ul>
-	<% @a.each do | elem |%>
+	 <%# for i = 0; i<books.length; i++ {%>
 
-		<li><%= elem %></li>
+		<!-- <li>  -->
+			<%#= i %>  <%#= books[i].title %>
+		<!-- </li> -->
 
-	<% end %>
+	<!-- <%#}%> -->
+	<% count = 1 %>
+	<% for i in books %>
+
+		<li> 
+			<%= count %> <%= i.title %>
+		</li>
+		<% count += 1 %>
+	<% end %> 
+
 </ul>
 
 <% if @logged_in %>

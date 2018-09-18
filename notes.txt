@@ -1,0 +1,2 @@
+# statc java on class level
+# activerecord is what to use to get DB stuff
