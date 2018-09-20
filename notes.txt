@@ -36,5 +36,6 @@ destroy  destroy(delete)
 
 
 create users controller like books, make route /users index list all.
+push what i have, add Casey, create pull request to create users controller
 
 
