@@ -1,26 +1,20 @@
 
-<% books = Book.all %>
-
 <h1>Home</h1>
 
+
+
+<h1>Number of Books <%= @books.size %></h1>
 <ul>
-	 <%# for i = 0; i<books.length; i++ {%>
+	
+	<% @books.each_with_index do | book,i | %>
 
-		<!-- <li>  -->
-			<%#= i %>  <%#= books[i].title %>
-		<!-- </li> -->
+		<ol><%="#{i+1}. #{book.title}" %></li>
 
-	<!-- <%#}%> -->
-	<% count = 1 %>
-	<% for i in books %>
-
-		<li> 
-			<%= count %> <%= i.title %>
-		</li>
-		<% count += 1 %>
-	<% end %> 
+	<% end %>
 
 </ul>
+
+
 
 <% if @logged_in %>
 	<a href="#">Sign Out</a>

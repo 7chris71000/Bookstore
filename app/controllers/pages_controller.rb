@@ -4,7 +4,9 @@ class PagesController < ApplicationController
 		# @ is instance variable
 		@a = [1,2,3,4,5]
 
-		@logged_in = true;
+		@logged_in = true
+
+		@books = Book.all
 
 	end
 

@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   get "/contact" => "pages#contact"
   
+	# Books resource
+	get "/books" => "books#index"
+
 
 end
