@@ -11,5 +11,8 @@ Rails.application.routes.draw do
 	# Books resource
 	get "/books" => "books#index"
 
+	# Users resource
+	get "/users" => "users#index"
+
 
 end
