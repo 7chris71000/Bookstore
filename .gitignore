@@ -31,4 +31,4 @@
 /config/master.key
 
 # Ignore notes made for personal use
-/notes.txt
+notes.txt
