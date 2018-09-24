@@ -1,15 +1,35 @@
 <h1>Users List</h1>
 
 <table>
-	<tr>
-		<th>User</th>
-		<th>Password</th>
-	</tr>
-	<% @users.each do | usr | %>
-	<tr>
-		<td><%= usr.name %></td>
-		<td><%= usr.password %></td>
-	</tr>
-	<% end %>
+	<thead>
+		<tr>
+			<th>User</th>
+			<th>Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do | user | %>
+		<tr>
+			<td><%= user.name %></td>
+			<td><%= user.password %></td>
+		</tr>
+		<% end %>
+	</tbody>
 
 </table>
+
+<br>
+
+<form action="create_user">
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<h2>Create User</h2>
+	<h4>Username</h4>
+	<input type="text" name="user"><br>
+	<h4>Password</h4>
+	<input type="password" name="pass"><br>
+	<h4>Confirm Password</h4>
+	<input type="password" name="confirmpass"><br> 
+	<input type="submit" name="submit-user" value="Create User">
+</form>
