@@ -21,4 +21,4 @@ The finished website will be an eCommerce bookstore that is designed to be used 
 
 ## Acknowledgements
 
-Huge thank you to @caseyli who is dedicating his time to mentor me through this process. I am very grateful of this opportunity. 
+Huge thank you to [Casey Li](https://github.com/caseyli) who is dedicating his time to mentor me through this process. I am very grateful for this opportunity.
