@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 	# used for form on users page
 	get "/create_user" => "users#create_user"
 
+	get "/toys" => "toys#index"
+
 end
