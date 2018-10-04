@@ -15,7 +15,11 @@
 			<td><%= book.title %></td>
 			<td><%= book.author %></td>
 			<td><%= book.published_year %></td>
-			<td><img src = <%= book.image_url != nil ? '#{book.image_url}' : image_tag('no_image_found.jpg') %> ></td>
+			<td>
+
+				<%= book.image_url.present? ? image_tag(book.image_url) : image_tag("no_image_found.jpg") %>
+
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
