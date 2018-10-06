@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	end
 
 
-	def create_user
+	def create
 
 		username = params[:user]
 		password = params[:pass]
