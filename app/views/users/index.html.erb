@@ -9,27 +9,13 @@
 	</thead>
 	<tbody>
 		<% @users.each do | user | %>
-			<tr>
-				<td><%= user.name %></td>
-				<td><%= user.password %></td>
-			</tr>
+		<tr>
+			<td><%= user.name %></td>
+			<td><%= user.password %></td>
+		</tr>
 		<% end %>
 	</tbody>
 
 </table>
 
-<br>
-
-<form action="create_user">
-
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-	<h2>Create User</h2>
-	<h4>Username</h4>
-	<input type="text" name="user"><br>
-	<h4>Password</h4>
-	<input type="password" name="pass"><br>
-	<h4>Confirm Password</h4>
-	<input type="password" name="confirmpass"><br> 
-	<input type="submit" name="submit-user" value="Create User">
-</form>
+<%= link_to "Create User", "users/new", class: "btn-create-user" %>

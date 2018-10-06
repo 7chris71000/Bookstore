@@ -14,8 +14,11 @@ Rails.application.routes.draw do
 	# Users resource
 	get "/users" => "users#index"
 
+	#Creating new user page
+	get "users/new" => "users#new"
+
 	# used for form on users page
-	get "/create_user" => "users#create_user"
+	get "users/create_user" => "users#create_user"
 
 	get "/toys" => "toys#index"
 
