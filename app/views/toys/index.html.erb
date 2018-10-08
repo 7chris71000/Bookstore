@@ -1,8 +1,47 @@
-<h1>Toys</h1>
-
-<table>
-	<thead>
-		
-	</thead>
+<head>
 	
-</table>
+</head>
+<body>
+	<div class="container">
+		<div id="portfolio">         	
+          
+          <%= link_to "Add New Toy", "#", class: "btn-dark-add-book" %>
+
+          <div class="portfolio-container">
+          	<ul>
+
+          		<% @toys.each do | toy | %>
+
+	          		<li class="one-fourth">
+	          			<p>
+	          					
+	          					<div class="book-cover-container">
+	          						<%= toy.image_url.present? ? image_tag(toy.image_url, width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
+	          						<%= link_to "View Details", "#", class: "view-details" %>
+	          					</div>
+
+	          			</p>
+	          			<h4 class="book-author">
+	          				<%= link_to toy.name, "#" %>
+	          			</h4>
+	          			<p class="book-author">
+	          				<%= toy.manufacturer %>
+	          			</p>
+	          			<p class="book-author">
+	          				SN: <%= toy.serial_number %>
+	          			</p>
+	          		</li>
+          		<% end %>
+
+          	</ul>
+          	<!--END ul-->
+          </div>
+
+
+          <!--END portfolio-wrap-->
+        </div>
+        <br clear="both">
+        <br clear="both">
+
+      </div>
+    </body>
