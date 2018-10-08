@@ -43,6 +43,16 @@
     cursor: pointer;
 }
 
+.btn-dark-add-book{
+    float: right;
+    margin-right: 15px;
+    padding: 10px;
+    background-color: #cccccc;
+    border-radius: 1rem; 
+    font-weight: bold;
+    border: 0.5px solid;
+}
+
 .add-cart-btn{
     margin-top: 10px;
 }
@@ -72,4 +82,41 @@
     margin-top: 10px;
     float: right;
     margin-right: 52px;
+}
+
+.btn-create-user{
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 10px; 
+    display: inline-block;
+    padding: 5px;
+}
+
+.btn-create-user:hover {
+    cursor: pointer;
+}
+
+.view-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    
+    border-radius: 0.5rem;
+
+    padding: 10px;
+    background-color: #cccccc;
+
+    font-weight: bold;
+    border: 0.5px solid;
+}
+
+.view-details:hover {
+    color: #777777;
+}
+
+img:hover + .view-details, .view-details:hover {
+    display: inline-block;
 }

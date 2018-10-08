@@ -57,3 +57,8 @@ a {
 .line-height-40{
     line-height: 40px;
 }
+
+.book-author {
+    margin-top: 0;
+    text-align: center;
+}

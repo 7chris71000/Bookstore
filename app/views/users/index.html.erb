@@ -1,3 +1,5 @@
+
+<br>
 <h1>Users List</h1>
 
 <table>
@@ -18,18 +20,4 @@
 
 </table>
 
-<br>
-
-<form action="create_user">
-
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-	<h2>Create User</h2>
-	<h4>Username</h4>
-	<input type="text" name="user"><br>
-	<h4>Password</h4>
-	<input type="password" name="pass"><br>
-	<h4>Confirm Password</h4>
-	<input type="password" name="confirmpass"><br> 
-	<input type="submit" name="submit-user" value="Create User">
-</form>
+<%= link_to "Create User", "/users/new", class: "btn-create-user" %>

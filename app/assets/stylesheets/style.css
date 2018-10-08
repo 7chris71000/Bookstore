@@ -182,7 +182,8 @@ label {
 }
 
 .one-half, .two-third, .one-third, .one-fourth, .one-fifth, .one-sixth, .index-body, .inner-content, .one-third-big {
-    margin-right: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 div#container > div.index-body2.index-body2-no-margin{

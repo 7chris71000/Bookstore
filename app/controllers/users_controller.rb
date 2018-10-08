@@ -6,7 +6,14 @@ class UsersController < ApplicationController
 
 	end
 
-	def create_user
+	def new
+	
+		@title = "New User"
+
+	end
+
+
+	def create
 
 		username = params[:user]
 		password = params[:pass]

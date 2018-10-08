@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag 'Dog.ico' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,23 +14,19 @@
   <body>
 
     <div class="nav">
-      <a href="/">
-        Home
-      </a>
-      <a href="/about">
-        About
-      </a>
-      <a href="/contact">
-        Contact
-      </a>
-      <a href="/books">
-        Books
-      </a>
-      <a href="/users">
-        Users
-      </a>
-    </div>
 
+      <%= link_to("Home", "/") %>
+
+      <%= link_to("About", "/about") %>
+    
+      <%= link_to("Contact", "/contact") %>
+     
+      <%= link_to("Books", "/books") %>
+      
+      <%= link_to("Users", "/users") %>
+      
+    </div>
+    <%= render "layouts/header" %>
     <%= yield %>
   </body>
 </html>

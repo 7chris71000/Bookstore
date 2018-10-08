@@ -1,4 +1,63 @@
-<h1>Books</h1>
+<head>
+	
+</head>
+<body>
+	<div class="container">
+		<div id="portfolio">
+         <!-- <ul id="filterable"> -->
+            <!-- <li class="first"><h5>Sort by:</h5></li> -->
+           	<!-- <li class="current"><a class="all" href="#all">Create New Book</a></li> -->
+            <!-- <li><a class="new" href="#new">New</a></li>
+            <li><a class="fiction" href="#fiction">Fiction</a></li>
+            <li><a class="non-fiction" href="#non-fiction">Non-Fiction</a></li>
+            <li><a class="all" href="#popular">Popular</a></li> -->
+
+          <!-- </ul> -->
+          <!--END filtering-nav-->          	
+          
+          <%= link_to "Add New Book", "#", class: "btn-dark-add-book" %>
+
+          <div class="portfolio-container">
+          	<ul>
+
+          		<% @books.each do | book | %>
+
+	          		<li class="one-fourth">
+	          			<p>
+	          				<!-- <a href="#"> -->
+	          					
+	          					<div class="book-cover-container">
+	          						<%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
+	          						<%= link_to "View Details", "#", class: "view-details" %>
+	          					</div>
+
+	          				<!-- </a> -->
+	          			</p>
+	          			<h4 class="book-author">
+	          				<%= link_to book.title, "#" %>
+	          			</h4>
+	          			<p class="book-author">
+	          				<%= book.author %>
+	          			</p>
+	          		</li>
+          		<% end %>
+
+          	</ul>
+          	<!--END ul-->
+          </div>
+
+
+          <!--END portfolio-wrap-->
+        </div>
+        <br clear="both">
+        <br clear="both">
+
+      </div>
+    </body>
+
+
+
+<!-- <h1>Books</h1>
 
 <table>
 	<thead>
@@ -10,14 +69,18 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @books.each do | book | %>
+		<%# @books.each do | book | %>
 		<tr>
-			<td><%= book.title %></td>
-			<td><%= book.author %></td>
-			<td><%= book.published_year %></td>
-			<td><img src = <%= book.image_url != nil ? '#{book.image_url}' : image_tag('no_image_found.jpg') %> ></td>
+			<td><%#= book.title %></td>
+			<td><%#= book.author %></td>
+			<td><%#= book.published_year %></td>
+			<td>
+
+				<%#= book.image_url.present? ? image_tag(book.image_url) : image_tag("no_image_found.jpg") %>
+
+			</td>
 		</tr>
-		<% end %>
+		<%# end %>
 	</tbody>
 
-</table>
+</table> -->
