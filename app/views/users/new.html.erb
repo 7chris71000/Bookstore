@@ -1,0 +1,17 @@
+<form action="/users" method="POST">
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+	<h2>Create User</h2>
+
+	<label for="user">Username</label><br>
+	<input type="text" name="user" id="user"><br>
+
+	<label for="password">Password</label><br>
+	<input type="password" name="pass" id="password"><br>
+
+	<label for="confirm_pass">Confirm Password</label><br>
+	<input type="password" name="confirmpass" id="confirm_pass"><br> 
+
+	<input type="submit" name="submit-user" value="Create User" class="btn-create-user">
+</form>

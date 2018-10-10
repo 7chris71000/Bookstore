@@ -73,3 +73,16 @@
     float: right;
     margin-right: 52px;
 }
+
+.btn-create-user{
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 10px; 
+    display: inline-block;
+    padding: 5px;
+}
+
+.btn-create-user:hover {
+    cursor: pointer;
+}
