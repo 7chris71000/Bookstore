@@ -21,10 +21,6 @@ ActiveRecord::Schema.define(version: 2018_10_08_220343) do
     t.integer "published_year"
   end
 
-  create_table "example_table", id: false, force: :cascade do |t|
-    t.integer "id"
-  end
-
   create_table "toys", force: :cascade do |t|
     t.string "name"
     t.string "manufacturer"
