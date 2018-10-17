@@ -140,3 +140,10 @@
     font-weight: normal;
     /*display: inline-block*/
 }
+
+.book-cover-container {
+    position: relative;
+    text-align: center;
+    color: white;
+
+}
