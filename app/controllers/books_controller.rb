@@ -6,4 +6,11 @@ class BooksController < ApplicationController
 
 	end
 
+	def product
+
+		@title = "Product" #this will be dynamic eventually
+
+	end
+
+
 end

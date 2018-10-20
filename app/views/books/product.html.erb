@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<head>
+    
+    <!-- <script>
+        $(function () {
+            $(".prod_nav ul").tabs(".panes > div", {
+                effect: 'fade',
+                fadeOutSpeed: 400
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".pane-list li").click(function () {
+                window.location = $(this).find("a").attr("href");
+                return false;
+            });
+        });
+    </script> -->
+</head>
+<body>
+
+<div class="container">
+    <!-- tab panes -->
+    <!--<div id="prod_wrapper">-->
+        <div class="panes">
+            <div> <%= image_tag("sapiens.jpg")%> 
+                <h2>Sapiens</h2>
+                <h5>Author: Yuval Noah Harari</h5>
+                <h3>$19.99</h3> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <!-- <div><img src="images/theSixthExtinction.jpg" alt="">
+                <h2>The Sixth Extinction</h2>
+                <h5>Author: Elizabeth Kolbert</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/theVitalQuestion.jpg" alt="">
+                <h2>The Vital Question</h2>
+                <h5>Author: Nick Lane</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/astrophysics.jpg" alt="">
+                <h2>Astrophysics for People in a Hurry</h2>
+                <h5>Author: Neil DeGrasse Tyson</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div>
+            <div><img src="images/humanUniverse.jpg" alt="">
+                <h2>Human Universe</h2>
+                <h5>Author: Brian Cox</h5>
+                <h3>$19.99</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                    Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                    libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                    non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                    non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+                </p>
+                <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
+            </div> -->
+        </div>
+
+        <!-- END tab panes -->
+        <br clear="all">
+    <div class="border-top"></div>
+        <!-- navigator -->
+
+        <!-- This will be dynamic eventually but static for now -->
+
+        <h2 class="related-title">Related Books:</h2>
+        <div class="prod_nav">
+            <ul>
+                <li><a href="#1"> <%= image_tag("theSixthExtinctionResized.jpg")%> <strong>Sapiens</strong></a></li>
+                <li><a href="#3"> <%= image_tag("theVitalQuestionResized.jpg")%> <strong>The Sixth Extinction</strong></a></li>
+                <li><a href="#4"> <%= image_tag("astrophysicsResized.jpg")%> <strong>The Vital Question</strong></a></li>
+                <li><a href="#2"> <%= image_tag("humanUniverseResized.jpg")%> <strong>Astrophysics for ...</strong></a></li>
+                <li><a href="#5"> <%= image_tag("sapiensResized.jpg")%> <strong>Human Universe</strong></a></li>
+            </ul>
+        </div>
+        <!-- close navigator -->
+        <br clear="both">
+    <!--</div>-->
+</div>
+</body>
+</html>

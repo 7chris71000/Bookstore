@@ -97,7 +97,7 @@
 }
 
 .panes div {
-    display: none;
+    /*display: none;*/
     top: 20px;
     left: 20px;
     font-size: 14px;
