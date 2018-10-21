@@ -21,5 +21,7 @@ Rails.application.routes.draw do
 	post "/users" => "users#create"
 
 	get "/toys" => "toys#index"
+	get "/toys/new" => "toys#new"
+	post "/toys" => "toys#create"
 
 end
