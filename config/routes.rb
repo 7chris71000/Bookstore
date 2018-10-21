@@ -10,14 +10,16 @@ Rails.application.routes.draw do
   
 	# Books resource
 	get "/books" => "books#index"
+	# Creating new book page
+	get "/books/new" => "books#new"
+	# Used for form on users page
+	post "/books" => "books#create"
 
 	# Users resource
 	get "/users" => "users#index"
-
-	#Creating new user page
+	# Creating new user page
 	get "/users/new" => "users#new"
-
-	# used for form on users page
+	# Used for form on users page
 	post "/users" => "users#create"
 
 	get "/toys" => "toys#index"
