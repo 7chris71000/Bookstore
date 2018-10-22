@@ -84,7 +84,7 @@
     margin-right: 52px;
 }
 
-.btn-create-user{
+.btn-create-object{
     background-color: white;
     border-radius: 5px;
     border: 2px solid black;
@@ -93,7 +93,7 @@
     padding: 5px;
 }
 
-.btn-create-user:hover {
+.btn-create-object:hover {
     cursor: pointer;
 }
 

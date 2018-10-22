@@ -250,6 +250,14 @@ div#container > div.index-body2.index-body2-margin{
     margin-right: 0px !important;
 }
 
+
+.one-half.new-book-container{
+    text-align: center;
+
+    border-right: 1px solid #e3e3e3; 
+
+}
+
 /*-idk-*/
 
 .border-bottom-cart{
