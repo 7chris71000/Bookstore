@@ -1,0 +1,37 @@
+<head>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="one-half new-book-container">
+		<!-- 	<div class="portfolio-container"> -->
+
+				<form action="/toys" method="POST">
+
+					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+					<h2>New Toy</h2>
+
+					<label for="name">Name</label><br>
+					<input type="text" name="name" id="name"><br>
+
+					<label for="manufacturer">Manufacturer</label><br>
+					<input type="text" name="manufacturer" id="manufacturer"><br>
+
+					<label for="serial_number">Serial Number</label><br>
+					<input type="text" name="serial_number" id="serial_number"><br> 
+
+					<label for="image_url">Image URL</label><br>
+					<input type="text" name="image_url" id="image_url"><br> 
+
+					<input type="submit" name="submit-toy" value="Create Toy" class="btn-create-object">
+				</form>
+			<!-- </div> -->
+		</div>
+			
+		<!-- </div> -->
+		<br clear="both">
+		<br clear="both">
+
+	</div>
+</body>
