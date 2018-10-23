@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   
 	# Books resource
 	get "/books" => "books#index"
-	get "/books/product" => "books#product"
+	# get "/books/product" => "books#product"
+	get "/books/:id" => "books#product"
 
 	# Users resource
 	get "/users" => "users#index"
