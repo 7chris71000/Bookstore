@@ -15,20 +15,16 @@ class BooksController < ApplicationController
 	end
 
 	def create
+		#  whitelisting params(strong params)
+		book_params = params.require(:book).permit(:title, :author, :published_year, :image_url)
 
-		title = params[:title]
-		author = params[:author]
-		published_year = params[:published_year]
-		image_url = params[:image_url]
-		
-
-		book = Book.new(title: title, author: author, published_year: published_year, image_url: image_url)
+		book = Book.new(book_params)
 		book.save
 		puts "Book Created"
 
 		redirect_to '/books'
 
-	end
+	end 
 
 
 end
