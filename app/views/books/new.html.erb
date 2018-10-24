@@ -4,32 +4,25 @@
 <body>
 	<div class="container">
 		<div class="one-half new-book-container">
-		<!-- 	<div class="portfolio-container"> -->
+			<h2>New Book</h2>
 
-				<form action="/books" method="POST">
+			<%= form_for(@book) do |f| %>
 
-					<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+				<%= f.label(:title) %><br>
+				<%= f.text_field(:title) %> <br>
+				<%= f.label(:author) %> <br>
+				<%= f.text_field(:author) %> <br>
+				<%= f.label(:published_year) %> <br>
+				<%= f.text_field(:published_year, {placeholder: "placeholder"}) %> <br>
+				<%= f.label(:image_url) %> <br>
+				<%= f.text_field(:image_url) %> <br>
 
-					<h2>New Book</h2>
+				<%= f.submit("Create Book", {class: "btn-create-object"}) %>
 
-					<label for="title">Title</label><br>
-					<input type="text" name="title" id="title"><br>
+			<% end %>
 
-					<label for="author">Author</label><br>
-					<input type="text" name="author" id="author"><br>
-
-					<label for="published_year">Published Year</label><br>
-					<input type="text" name="published_year" id="published_year"><br> 
-
-					<label for="image_url">Image URL</label><br>
-					<input type="text" name="image_url" id="image_url"><br> 
-
-					<input type="submit" name="submit-book" value="Create Book" class="btn-create-object">
-				</form>
-			<!-- </div> -->
 		</div>
-			
-		<!-- </div> -->
+
 		<br clear="both">
 		<br clear="both">
 
