@@ -12,6 +12,9 @@ class BooksController < ApplicationController
 
 		@title = "New Book"
 
+		@book = Book.new
+		@book.title = "Default Title"
+
 	end
 
 	def create
