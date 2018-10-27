@@ -1,23 +1,68 @@
+<head>
+	
+</head>
+<body>
+	<div class="container">
+		<div class="one-half new-book-container">
+			<br>
+			<h1>Users List</h1>
 
-<br>
-<h1>Users List</h1>
+			<table class="table-center">
+				<thead>
+					<tr>
+						<th>User</th>
+						<th>Password</th>
+						<th>Age</th>
+						<th>Gender</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do | user | %>
+					<tr>
+						<td><%= user.name %></td>
+						<td><%= user.password %></td>
+						<td><%= user.age %></td>
+						<td><%= user.gender %></td>
+					</tr>
+					<% end %>
+				</tbody>
 
-<table>
-	<thead>
-		<tr>
-			<th>User</th>
-			<th>Password</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @users.each do | user | %>
-			<tr>
-				<td><%= user.name %></td>
-				<td><%= user.password %></td>
-			</tr>
-		<% end %>
-	</tbody>
+			</table>
 
-</table>
+			<%#= link_to "Create User", "/users/new", class: "btn-create-object" %>
 
-<%= link_to "Create User", "/users/new", class: "btn-create-object" %>
+
+		</div>
+
+		<div class="one-half text-center">
+			<br>
+			<h1>New User</h2>
+
+			<%= form_for(@user) do |f| %>
+
+				<%= f.label(:name) %><br>
+				<%= f.text_field(:name) %> <br>
+				<%= f.label(:password) %> <br>
+				<%= f.password_field(:password) %> <br>
+				<%= f.label(:age) %> <br>
+				<%= f.number_field(:age) %> <br>
+
+				<%= f.label(:gender) %><br>
+				<%= f.radio_button(:gender, 'male') %>
+				<%= label(:gender, 'Male', :value => 'male') %>
+				<%= f.radio_button(:gender, 'female') %>
+				<%= label(:gender, 'Female', :value => 'female') %>
+				<%= f.radio_button(:gender, 'other', :checked => true) %>
+				<%= label(:gender, 'Other', :value => 'other') %><br>
+
+				<%= f.submit("Create User", {class: "btn-create-object"}) %>
+
+			<% end %>
+
+		</div>
+
+		<br clear="both">
+		<br clear="both">
+
+	</div>
+</body>

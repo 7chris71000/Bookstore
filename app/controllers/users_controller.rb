@@ -2,31 +2,28 @@ class UsersController < ApplicationController
 
 	def index
 		
+		@user = User.new
 		@users = User.all
 
+		@title = "Users"
+
 	end
 
-	def new
+	# def new
 	
-		@title = "New User"
+	# 	@title = "New User"
 
-	end
+	# end
 
 
 	def create
 
-		username = params[:user]
-		password = params[:pass]
-		matches = (params[:pass] == params[:confirmpass])
+		user_params = params.require(:user).permit(:name, :password, :age, :gender)
 
-		if(matches && username != nil && password != nil)
-			user = User.new
-			user.name = username
-			user.password = password
-			user.save
-			puts "User Created"
-		end 
-
+		user = User.new(user_params)
+		user.save
+		puts "User Created"
+		
 		redirect_to '/users'
 
 	end
