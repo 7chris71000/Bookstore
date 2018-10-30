@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 	get "/books" => "books#index"
 	# Creating new book page
 	get "/books/new" => "books#new"
+
+	get "/books/:id" => "books#show"
+
 	# Used for form on users page
 	post "/books" => "books#create"
 
@@ -25,5 +28,7 @@ Rails.application.routes.draw do
 	get "/toys" => "toys#index"
 	get "/toys/new" => "toys#new"
 	post "/toys" => "toys#create"
+
+
 
 end

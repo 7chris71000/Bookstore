@@ -28,5 +28,15 @@ class BooksController < ApplicationController
 
 	end 
 
+	def show
+	
+		@title = "Books Show"
+
+		@book = Book.find(params[:id])
+
+
+	end
+
+
 
 end
