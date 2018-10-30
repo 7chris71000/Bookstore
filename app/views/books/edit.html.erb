@@ -1,16 +1,9 @@
-<h1>Edit <%= @book.title %></h1>
+<div class="container">
+	<div class="one-half new-book-container">
 
-<%= form_for(@book) do |f| %>
+		<h1>Edit <%= @book.title %></h1>
 
-	<%= f.label(:title) %><br>
-	<%= f.text_field(:title) %> <br>
-	<%= f.label(:author) %> <br>
-	<%= f.text_field(:author) %> <br>
-	<%= f.label(:published_year) %> <br>
-	<%= f.text_field(:published_year) %> <br>
-	<%= f.label(:image_url) %> <br>
-	<%= f.text_field(:image_url) %> <br>
+		<%= render "form" %>
 
-	<%= f.submit %>
-
-<% end %>
+	</div>
+</div>
