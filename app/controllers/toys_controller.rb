@@ -2,6 +2,7 @@ class ToysController < ApplicationController
 
 	def index
 
+		@title = "Toys"
 		@toys = Toy.all;
 
 	end
@@ -10,18 +11,16 @@ class ToysController < ApplicationController
 	
 		@title = "New Toy"
 
+		@toy = Toy.new
+
 	end
 
 	def create
 
-		toyName = params[:name]
-		manufacturer = params[:manufacturer]
-		serial_number = params[:serial_number]
-		image_url = params[:image_url]
+		toy_params = params.require(:toy).permit(:name, :manufacturer, :serial_number, :image_url)
 
-		toy = Toy.new(name: toyName, manufacturer: manufacturer, serial_number: serial_number, image_url: image_url)
+		toy = Toy.new(toy_params)
 		toy.save
-		
 		puts "Toy Created"
 		
 
