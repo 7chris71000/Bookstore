@@ -24,12 +24,19 @@ body {
 ol, ul, li {
     margin: 0;
     padding: 0;
-    list-style-type: none
+    list-style-type: none;
+}
+
+table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 0px;
 }
 
 .container {
     font-size: 1em;
-    width: 960px;
+    /*width: 960px;*/
+    width: 1000px;
     background: #FFF;
     padding: 15px 20px;
     margin: auto;
@@ -113,6 +120,10 @@ label {
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9em;
     color: #666
+}
+
+.text-center{
+    text-align: center;
 }
 
 
@@ -299,7 +310,15 @@ div#container > div.index-body2.index-body2-margin{
 /*-------------------------------------------------------------------------------------------------*/
 /*Misc*/
 /*-------------------------------------------------------------------------------------------------*/
+/*table*/
+.table-center{
+    margin-right: auto;
+    margin-left: auto;
+}
 
+.table-center th{
+    background-color: #eee;
+}
 
 
 /*-------------------------------------------------------------------------------------------------*/
