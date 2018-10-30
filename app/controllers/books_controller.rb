@@ -37,6 +37,28 @@ class BooksController < ApplicationController
 
 	end
 
+	def edit
+
+		@title = "Edit Book"
+		@book = Book.find(params[:id])
+
+	end
+
+	def update
+
+		book_params = params.require(:book).permit(:title, :author, :published_year, :image_url)
+
+
+		@book = Book.find(params[:id])
+
+		@book.update(book_params)
+
+		redirect_to "/books/#{@book.id}"
+
+	end
+
+
+
 
 
 end

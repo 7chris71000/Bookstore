@@ -13,7 +13,11 @@ Rails.application.routes.draw do
 	# Creating new book page
 	get "/books/new" => "books#new"
 
-	get "/books/:id" => "books#show"
+	get "/books/:id" => "books#show", as: :book 
+
+	get "/books/:id/edit" => "books#edit"
+
+	patch "/books/:id" => "books#update"
 
 	# Used for form on users page
 	post "/books" => "books#create"
