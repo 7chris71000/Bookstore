@@ -38,7 +38,7 @@
           <div class="book-cover-container">
             <%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %> 
             <%#= link_to "View Details", "/books/#{book.id}", class: "view-details" %>
-            </div>
+          </div>
             <strong> <%= book.title %> </strong>
           
         </a>
