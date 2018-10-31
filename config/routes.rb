@@ -31,6 +31,9 @@ Rails.application.routes.draw do
 
 	get "/toys" => "toys#index"
 	get "/toys/new" => "toys#new"
+
+	get "/toys/:id" => "toys#show", as: :toy
+
 	post "/toys" => "toys#create"
 
 
