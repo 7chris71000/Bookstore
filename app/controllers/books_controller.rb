@@ -13,7 +13,6 @@ class BooksController < ApplicationController
 	end
 
 	def create
-		#  whitelisting params(strong params)
 		book = Book.new(book_params)
 		book.save
 		puts "Book Created"
@@ -52,6 +51,7 @@ class BooksController < ApplicationController
 	private 
 
 		def book_params
+			#  whitelisting params(strong params)
 			params.require(:book).permit(:title, :author, :published_year, :image_url)
 		end
 

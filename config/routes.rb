@@ -30,7 +30,15 @@ Rails.application.routes.draw do
 	post "/users" => "users#create"
 
 	get "/toys" => "toys#index"
+	
 	get "/toys/new" => "toys#new"
+
+	get "/toys/:id" => "toys#show", as: :toy
+
+	get "/toys/:id/edit" => "toys#edit"
+
+	patch "/toys/:id" => "toys#update"
+
 	post "/toys" => "toys#create"
 
 
