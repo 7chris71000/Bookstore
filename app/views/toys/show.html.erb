@@ -29,7 +29,7 @@
           <h2 class="related-title">Related Toys:</h2>
           <div class="prod_nav">
             <ul>
-              <% @randomNumArray.each do | i | %>
+              <% @random_number_array.each do | i | %>
               <% toy = Toy.find(i) %>
               <% route = "/toys/#{i}" %>
               <li>

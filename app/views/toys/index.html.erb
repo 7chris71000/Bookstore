@@ -17,7 +17,7 @@
 	          					
 	          					<div class="book-cover-container">
 	          						<%= toy.image_url.present? ? image_tag(toy.image_url, width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
-	          						<%= link_to "View Details", "toys/#{toy.id}", class: "view-details" %>
+	          						<%= link_to "View Details", "/toys/#{toy.id}", class: "view-details" %>
 	          					</div>
 
 	          			</p>
