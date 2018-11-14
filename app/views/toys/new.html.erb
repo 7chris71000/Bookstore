@@ -6,21 +6,7 @@
 		<div class="one-half new-book-container">
 			<h2>New Toy</h2>
 
-			<%= form_for(@toy) do |f|%>
-
-				<%= f.label(:name) %><br>
-				<%= f.text_field(:name) %><br>
-				<%= f.label(:manufacturer) %><br>
-				<%= f.text_field(:manufacturer) %><br>
-				<%= f.label(:serial_number) %><br>
-				<%= f.text_field(:serial_number) %><br>
-				<%= f.label(:image_url) %><br>
-				<%= f.text_field(:image_url) %><br>
-
-				<%= f.submit("Create Toy", {class: "btn-create-object"}) %>
-
-
-			<% end %>
+			<%= render "form" %>
 
 		</div>
 			

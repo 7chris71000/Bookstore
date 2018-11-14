@@ -11,13 +11,23 @@ class ToysController < ApplicationController
 	end
 
 	def create
-		toy_params = params.require(:toy).permit(:name, :manufacturer, :serial_number, :image_url)
 		toy = Toy.new(toy_params)
 		toy.save
 		puts "Toy Created"
 		redirect_to '/toys'
 	end
 
+	def edit
+		@title = "Edit Toy"
+		@toy = Toy.find(params[:id])
+	end 
+
+	def update
+		@toy = Toy.find(params[:id])
+		@toy.update(toy_params)
+		redirect_to "/toys/#{@toy.id}"
+	end
+	
 	def show
 		
 		@toy = Toy.find(params[:id])
@@ -38,6 +48,11 @@ class ToysController < ApplicationController
 		end
 	end
 
+	private
+
+		def toy_params
+			params.require(:toy).permit(:name, :manufacturer, :serial_number, :image_url)
+		end
 
 
 end
