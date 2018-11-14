@@ -1,0 +1,51 @@
+      <div class="container">
+        <!-- tab panes -->
+        <!--<div id="prod_wrapper">-->
+          <div class="panes">
+            <%= link_to "Back to toys", "/toys", class: "btn-dark-add-book" %>
+            <div> <%= @toy.image_url.present? ? image_tag(@toy.image_url) : image_tag("no_image_found.jpg")%> 
+              <h2><%= @toy.name %></h2>
+              <h5>Author: <%= @toy.manufacturer %></h5>
+              <p> 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
+                Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
+                libero ut convallis. Nulla bibendum varius mollis. Vivamus imperdiet, elit id maximus malesuada, libero nisl mollis arcu,
+                non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
+                non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
+              </p>
+              <br>
+              <%= link_to "Add to Cart", "/toys/#{@toy.id}/#" %>
+              <%= link_to "Edit", "/toys/#{@toy.id}/edit" %>
+            </div>
+          </div>
+
+          <!-- END tab panes -->
+          <br clear="all">
+          <div class="border-top"></div>
+          <!-- navigator -->
+
+          <!-- This will be dynamic eventually but static for now -->
+
+          <h2 class="related-title">Related Toys:</h2>
+          <div class="prod_nav">
+            <ul>
+              <% @random_number_array.each do | i | %>
+              <% toy = Toy.find(i) %>
+              <% route = "/toys/#{i}" %>
+              <li>
+                <a href = <%= route %> > 
+                  <div class="toy-cover-container">
+                    <%= toy.image_url.present? ? image_tag(toy.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %> 
+                    <%#= link_to "View Details", "/toys/#{toy.id}", class: "view-details" %>
+                    </div>
+                    <strong> <%= toy.name %> </strong>
+                  
+                </a>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- close navigator -->
+          <br clear="both">
+          <!--</div>-->
+        </div>
