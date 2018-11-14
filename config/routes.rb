@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 	# Used for form on users page
 	post "/books" => "books#create"
 
+	delete "/books/:id" => "books#destroy"
+
 	# Users resource
 	get "/users" => "users#index"
 	# Creating new user page

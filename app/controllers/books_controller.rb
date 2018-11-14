@@ -28,13 +28,13 @@ class BooksController < ApplicationController
 		@randomNumArray = [] 
 		i = 0 # counter to determine when 5 numbers have been added to array
 		largestId = Book.last.id
-		while i < 5 do  
-			randNum = rand(1..largestId)
-			if(!@randomNumArray.include? randNum) # ensures that the number isnt in the array
-				@randomNumArray[i] = randNum
-				i += 1;
-			end
-		end
+		# while i < 5 do  
+		# 	randNum = rand(1..largestId)
+		# 	if(!@randomNumArray.include? randNum) # ensures that the number isnt in the array
+		# 		@randomNumArray[i] = randNum
+		# 		i += 1;
+		# 	end
+		# end
 	end
 
 	def edit
@@ -47,6 +47,13 @@ class BooksController < ApplicationController
 		@book.update(book_params)
 		redirect_to "/books/#{@book.id}"
 	end
+
+	def destroy
+		@book = Book.find(params[:id])
+		@book.destroy
+		redirect_to "/books"
+	end
+
 
 	private 
 
