@@ -1,3 +1,15 @@
+<% if @book.errors.full_messages.present? %>
+	<ul>
+		<% @book.errors.full_messages.each do |error| %>
+			<li>
+				<%= error %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>
+
+
+
 <%= form_for(@book) do |f| %>
 
 	<%= f.label(:title) %><br>
