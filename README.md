@@ -21,7 +21,7 @@ The finished website will be an eCommerce bookstore that is designed to be used 
 
 ## Contribution
 
-This repository is managed by Chris Francis. If you would like to contribute email c.francis7@live.ca or you can message me on github.
+This repository is managed by Chris Francis. If you would like to contribute email c.francis7@live.ca or you can message me on GitHub.
 
 ## Acknowledgements
 
