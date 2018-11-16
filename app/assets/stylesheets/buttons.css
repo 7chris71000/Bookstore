@@ -120,3 +120,22 @@
 img:hover + .view-details, .view-details:hover {
     display: inline-block;
 }
+
+.back-to-all-prod {
+    display:inline-block;
+    padding: 4.38px 5px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    border-radius: 0.5rem; 
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.back-to-all-prod:hover {
+    color: black;
+    background-color: white;
+}
