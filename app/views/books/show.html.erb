@@ -1,7 +1,8 @@
 <div class="container">
   <!-- tab panes -->
   <!--<div id="prod_wrapper">-->
-    <!-- <div class="panes"> -->
+    <%= link_to "Back to Books", "/books", class: "back-to-all-prod" %> <br>
+    <div class="panes">
       <div> <%= @book.image_url.present? ? image_tag(@book.image_url) : image_tag("no_image_found.jpg")%> 
         <h2><%= @book.title %></h2>
         <h5>Author: <%= @book.author %></h5>
@@ -13,13 +14,14 @@
           non molestie sem mauris et metus. Pellentesque orci velit, tincidunt et diam id, vulputate rutrum ante. In luctus viverra nibh,
           non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
         </p>
-        <button class="btn btn-dark add-cart-btn"><a href="cart.html" class="text-white">Add to Cart</a></button>
-        <%= link_to "Edit", "/books/#{@book.id}/edit" %>
-        <%= link_to "Destroy", "/books/#{@book.id}", {method: :delete, data: {confirm: "Are you sure you want to delete #{@book.title}?"}} %>
-        <%= link_to "Back to books", "/books" %>
+        
+        <%= link_to "Add to Cart", "/books/#{@book.id}#" %> <br>
+        <%= link_to "Edit", "/books/#{@book.id}/edit" %> <br>
+        <%= link_to "Destroy", "/books/#{@book.id}", {method: :delete, data: {confirm: "Are you sure you want to delete #{@book.title}?"}} %> <br>
+        
 
       </div>
-    <!-- </div> -->
+    </div>
 
     <!-- END tab panes -->
     <br clear="all">
