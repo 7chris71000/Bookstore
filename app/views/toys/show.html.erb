@@ -2,7 +2,7 @@
         <!-- tab panes -->
         <!--<div id="prod_wrapper">-->
           <div class="panes">
-            <%= link_to "Back to Toys", "/toys", class: "btn-dark-add-book" %>
+            <%= link_to "Back to toys", "/toys", class: "btn-dark-add-book" %>
             <div> <%= @toy.image_url.present? ? image_tag(@toy.image_url) : image_tag("no_image_found.jpg")%> 
               <h2><%= @toy.name %></h2>
               <h5>Author: <%= @toy.manufacturer %></h5>
@@ -14,8 +14,8 @@
                 non semper nisi vulputate sed. Sed ut dui convallis, maximus nibh rutrum, tincidunt arcu.
               </p>
               <br>
-              <%= link_to "Add to Cart", "/toys/#{@toy.id}/#" %> <br>
-              <%= link_to "Edit", "/toys/#{@toy.id}/edit" %> <br>
+              <%= link_to "Add to Cart", "/toys/#{@toy.id}/#" %>
+              <%= link_to "Edit", "/toys/#{@toy.id}/edit" %>
             </div>
           </div>
 

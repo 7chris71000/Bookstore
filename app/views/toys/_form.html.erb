@@ -1,15 +1,3 @@
-<!-- Error message will appear above form informing the user what is needed -->
-<% if @toy.errors.full_messages.present? %>
-	<ul>
-		<% @toy.errors.full_messages.each do |error| %>
-			<li>
-				<%= error %>
-			</li>
-		<% end %>	
-	</ul>
-<% end %>
-
-
 <%= form_for(@toy) do |f| %>
 
 	<%= f.label(:name) %><br>
