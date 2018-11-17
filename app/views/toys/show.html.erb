@@ -16,6 +16,7 @@
               <br>
               <%= link_to "Add to Cart", "/toys/#{@toy.id}/#" %>
               <%= link_to "Edit", "/toys/#{@toy.id}/edit" %>
+              <%= link_to "Delete", "/toys/#{@toy.id}", {method: :delete, data: {confirm: "Are you sure you want to delete #{@toy.name}?"}} %> <br>
             </div>
           </div>
 

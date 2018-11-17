@@ -43,6 +43,8 @@ Rails.application.routes.draw do
 
 	post "/toys" => "toys#create"
 
+	delete "/toys/:id" => "toys#destroy"
+
 
 
 end
