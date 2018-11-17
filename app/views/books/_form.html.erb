@@ -1,3 +1,4 @@
+<!-- Error message will appear above form informing the user what is needed -->
 <% if @book.errors.full_messages.present? %>
 	<ul>
 		<% @book.errors.full_messages.each do |error| %>
