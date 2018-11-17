@@ -14,7 +14,7 @@ class ToysController < ApplicationController
 		@toy = Toy.new(toy_params)
 		if @toy.save
 			redirect_to '/toys'
-		else 
+		else
 			render 'new'
 		end
 	end
@@ -29,9 +29,8 @@ class ToysController < ApplicationController
 		if @toy.update(toy_params)
 			redirect_to "/toys/#{@toy.id}"
 		else
-			render 'edit' 
+			render 'edit'
 		end
-
 	end
 	
 	def show
@@ -45,13 +44,13 @@ class ToysController < ApplicationController
 		@random_number_array = [] 
 		i = 0 # counter to determine when 5 numbers have been added to array
 		largest_id = Toy.last.id
-		# while i < 5 do  
-		# 	random_number = rand(1..largest_id)
-		# 	if(!@random_number_array.include? random_number) # ensures that the number isnt in the array
-		# 		@random_number_array[i] = random_number
-		# 		i += 1;
-		# 	end
-		# end
+		while i < 5 do  
+			random_number = rand(1..largest_id)
+			if(!@random_number_array.include? random_number) # ensures that the number isnt in the array
+				@random_number_array[i] = random_number
+				i += 1;
+			end
+		end
 	end
 
 	private
