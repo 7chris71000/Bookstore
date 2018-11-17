@@ -11,10 +11,12 @@ class ToysController < ApplicationController
 	end
 
 	def create
-		toy = Toy.new(toy_params)
-		toy.save
-		puts "Toy Created"
-		redirect_to '/toys'
+		@toy = Toy.new(toy_params)
+		if @toy.save
+			redirect_to '/toys'
+		else
+			render 'new'
+		end
 	end
 
 	def edit
@@ -24,8 +26,11 @@ class ToysController < ApplicationController
 
 	def update
 		@toy = Toy.find(params[:id])
-		@toy.update(toy_params)
-		redirect_to "/toys/#{@toy.id}"
+		if @toy.update(toy_params)
+			redirect_to "/toys/#{@toy.id}"
+		else
+			render 'edit'
+		end
 	end
 	
 	def show
