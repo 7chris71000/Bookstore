@@ -62,7 +62,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#ruby-gemset=my_second_rails_app
+#ruby-gemset=bookstore
 
 gem "font-awesome-rails"
 
