@@ -8,43 +8,27 @@ Rails.application.routes.draw do
 
   get "/contact" => "pages#contact"
   
-	# Books resource
-	get "/books" => "books#index"
-	# Creating new book page
-	get "/books/new" => "books#new"
+	# # Books resource
 
-	get "/books/:id" => "books#show", as: :book 
+	resources :books
+	# get "/books" => "books#index"
+	# # Creating new book page
+	# get "/books/new" => "books#new"
 
-	get "/books/:id/edit" => "books#edit"
+	# get "/books/:id" => "books#show", as: :book 
 
-	patch "/books/:id" => "books#update"
+	# get "/books/:id/edit" => "books#edit"
 
-	# Used for form on users page
-	post "/books" => "books#create"
+	# patch "/books/:id" => "books#update"
 
-	delete "/books/:id" => "books#destroy"
+	# # Used for form on users page
+	# post "/books" => "books#create"
 
+	# delete "/books/:id" => "books#destroy"
 	# Users resource
-	get "/users" => "users#index"
-	# Creating new user page
-	get "/users/new" => "users#new"
-	# Used for form on users page
-	post "/users" => "users#create"
 
-	get "/toys" => "toys#index"
-	
-	get "/toys/new" => "toys#new"
+	resources :users, only: [:index, :new, :create] 
 
-	get "/toys/:id" => "toys#show", as: :toy
-
-	get "/toys/:id/edit" => "toys#edit"
-
-	patch "/toys/:id" => "toys#update"
-
-	post "/toys" => "toys#create"
-
-	delete "/toys/:id" => "toys#destroy"
-
-
+	resources :toys
 
 end
