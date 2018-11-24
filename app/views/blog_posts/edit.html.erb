@@ -1,6 +1,9 @@
-<h1>Editing Blog Post</h1>
+<div class="container">
 
-<%= render 'form', blog_post: @blog_post %>
+	<h1>Editing Blog Post</h1>
 
-<%= link_to 'Show', @blog_post %> |
-<%= link_to 'Back', blog_posts_path %>
+	<%= render 'form', blog_post: @blog_post %>
+
+	<%= link_to 'Back', blog_posts_path %> | <%= link_to 'Show', @blog_post %>
+
+</div>
