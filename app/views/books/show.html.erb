@@ -28,6 +28,17 @@
     <div class="border-top"></div>
     <!-- navigator -->
 
+
+    <h2>Reviews</h2>
+    <% @book.reviews.each do |review| %>
+      <div>
+        <%= review.star_rating %><br>
+        <%= review.comment %><br>
+        <%= review.author %><br>
+      </div>
+    <% end %>
+
+
     <!-- This will be dynamic eventually but static for now -->
 
     <h2 class="related-title">Related Books:</h2>
