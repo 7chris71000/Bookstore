@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_24_000221) do
+ActiveRecord::Schema.define(version: 2018_11_24_021217) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.string "title"
@@ -29,11 +29,24 @@ ActiveRecord::Schema.define(version: 2018_11_24_000221) do
     t.decimal "price"
   end
 
+  create_table "post_tags", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "author"
     t.integer "star_rating"
     t.text "comment"
     t.integer "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
