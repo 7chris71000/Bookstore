@@ -26,11 +26,11 @@
           <!-- navigator -->
 
           <h2>Reviews</h2>
-          <% @toy.toy_reviews.each do |review| %>
+          <% @toy.toy_reviews.each do |toy_review| %>
             <div>
-              <%= review.star_rating %>            
-              <%= review.comment %>
-              <%= review.author %>
+              <%= toy_review.star_rating %>            
+              <%= toy_review.comment %>
+              <%= toy_review.author %>
             </div>
           <% end %>
 
