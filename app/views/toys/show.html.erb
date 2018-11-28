@@ -25,6 +25,16 @@
           <div class="border-top"></div>
           <!-- navigator -->
 
+          <h2>Reviews</h2>
+          <% @toy.toy_reviews.each do |toy_review| %>
+            <div>
+              <%= toy_review.star_rating %>            
+              <%= toy_review.comment %>
+              <%= toy_review.author %>
+            </div>
+          <% end %>
+
+
           <!-- This will be dynamic eventually but static for now -->
 
           <h2 class="related-title">Related Toys:</h2>

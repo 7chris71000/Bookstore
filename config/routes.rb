@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :blog_posts
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "pages#home"
 
@@ -31,5 +31,7 @@ Rails.application.routes.draw do
 	resources :users, only: [:index, :new, :create] 
 
 	resources :toys
+
+  resources :blog_posts
 
 end
