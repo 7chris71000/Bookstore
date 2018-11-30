@@ -6,6 +6,7 @@
 			<%= review.star_rating %>
 			<%= review.author %>
 			<%= review.comment %>
+			<%= link_to "Show", "/books/#{@book.id}/reviews/#{review.id}" %> <!-- book_review_path did not work here -->
 		</div>
 	<% end %>
 
@@ -13,5 +14,5 @@
 	There are currently no reviews for this book
 <% end %>
 
-
+<!-- new_book_review_path is found using rails routes in the terminal -->
 <%= link_to "Add a review", new_book_review_path(@book) %>

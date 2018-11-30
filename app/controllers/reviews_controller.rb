@@ -6,7 +6,8 @@ class ReviewsController < ApplicationController
 	end
 
 	def show
-		
+		set_book
+		@review = @book.reviews.find(params[:id])
 	end
 
 	def new
@@ -29,11 +30,19 @@ class ReviewsController < ApplicationController
 	end
 
 	def update
+		set_book
+		@review = @book.reviews.find(params[:id])
+		if @review.update(review_params)
+			redirect_to book_reviews_path(@book)
+		else 
+			render 'edit'
+		end
 
 	end
 
 	def edit
-	
+		set_book
+		@review = @book.reviews.find(params[:id])
 	end
 
 	private
