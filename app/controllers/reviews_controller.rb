@@ -26,7 +26,10 @@ class ReviewsController < ApplicationController
 	end
 
 	def destroy
-
+		set_book
+		@review = @book.reviews.find(params[:id])
+		@review.destroy
+		redirect_to book_reviews_path(@book)
 	end
 
 	def update
