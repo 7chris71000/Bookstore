@@ -6,7 +6,7 @@
 			<%= review.star_rating %>
 			<%= review.author %>
 			<%= review.comment %>
-			<%= link_to "Show", "/books/#{@book.id}/reviews/#{review.id}" %> <!-- book_review_path did not work here -->
+			<%= link_to "Show", book_review_path(@book, @review) %> <!-- book_review_path did not work here -->
 		</div>
 	<% end %>
 
