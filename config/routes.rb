@@ -11,7 +11,12 @@ Rails.application.routes.draw do
   
 	# # Books resource
 
-	resources :books
+	resources :books do 
+		resources :reviews
+	end
+
+
+
 	# get "/books" => "books#index"
 	# # Creating new book page
 	# get "/books/new" => "books#new"
@@ -33,5 +38,7 @@ Rails.application.routes.draw do
 	resources :toys
 
   resources :blog_posts
+
+
 
 end

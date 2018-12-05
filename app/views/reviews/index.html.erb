@@ -1,0 +1,18 @@
+<h1><%= "Reviews for #{@book.title}" %></h1>
+
+<% if @reviews.present? %>
+	<% @reviews.each do |review| %>
+		<div class="review">
+			<%= review.star_rating %>
+			<%= review.author %>
+			<%= review.comment %>
+			<%= link_to "Show", book_review_path(@book, @review) %> <!-- book_review_path did not work here -->
+		</div>
+	<% end %>
+
+<% else %>
+	There are currently no reviews for this book
+<% end %>
+
+<!-- new_book_review_path is found using rails routes in the terminal -->
+<%= link_to "Add a review", new_book_review_path(@book) %>
