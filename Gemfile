@@ -64,8 +64,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #ruby-gemset=bookstore
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Fixes security vulneribilities suggested by GitHub
-gem "rack", ">= 2.0.6"
-gem "loofah", ">= 2.2.3"
+gem 'rack', '>= 2.0.6'
+gem 'loofah', '>= 2.2.3'
+
+# Gem devise used for user authentication
+gem 'devise'
