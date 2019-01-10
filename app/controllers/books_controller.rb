@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
 
+	# This runs before every method call. Checks if user is signed in
+	before_action :deny_access_for_non_signed_in_users
+
 	def index
 
 		@title = "Books"
@@ -69,5 +72,10 @@ class BooksController < ApplicationController
 			params.require(:book).permit(:title, :author, :published_year, :image_url)
 		end
 
+		def deny_access_for_non_signed_in_users
+			if !user_signed_in?
+				redirect_to root_path
+			end
+		end
 
 end
