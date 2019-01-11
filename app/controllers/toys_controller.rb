@@ -1,5 +1,7 @@
 class ToysController < ApplicationController
 
+	before_action :deny_access_for_non_signed_in_users
+
 	def index
 		@title = "Toys"
 		@toys = Toy.all
@@ -65,5 +67,10 @@ class ToysController < ApplicationController
 			params.require(:toy).permit(:name, :manufacturer, :serial_number, :image_url)
 		end
 
+		def deny_access_for_non_signed_in_users
+			if !user_signed_in?
+				redirect_to root_path
+			end
+		end
 
 end
