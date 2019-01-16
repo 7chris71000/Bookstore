@@ -1,31 +1,44 @@
 class UsersController < ApplicationController
 
-	def index
+	before_action :deny_access_for_non_signed_in_users
+
+	# def index
 		
-		@user = User.new
-		@users = User.all
+	# 	@user = User.new
+	# 	@users = User.all
 
-		@title = "Users"
-
-	end
-
-	# def new
-	
-	# 	@title = "New User"
+	# 	@title = "Users"
 
 	# end
 
+	def show
+	
+		@title = User.find(params[:id]).name
 
-	def create
+		@profile = User.find(params[:id])
 
-		user_params = params.require(:user).permit(:name, :password, :age, :gender)
-
-		user = User.new(user_params)
-		user.save
-		puts "User Created"
-		
-		redirect_to '/users'
 
 	end
+
+
+	# def create
+
+	# 	user_params = params.require(:user).permit(:name, :password, :age, :gender)
+
+	# 	user = User.new(user_params)
+	# 	user.save
+	# 	puts "User Created"
+		
+	# 	redirect_to '/users'
+
+	# end
+
+	private
+
+		def deny_access_for_non_signed_in_users
+			if !user_signed_in?
+				redirect_to new_user_session_path
+			end
+		end
 
 end

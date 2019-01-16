@@ -78,3 +78,7 @@
     color: #ef2f2f;
     margin-right: 0px;
 }
+
+.header-float-right{
+    float: right;
+}
