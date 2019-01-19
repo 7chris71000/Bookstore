@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
 	# This runs before every method call. Checks if user is signed in
-	before_action :deny_access_for_non_signed_in_users
+	# before_action :deny_access_for_non_signed_in_users
 
 	def index
 
@@ -13,6 +13,13 @@ class BooksController < ApplicationController
 	def new
 		@title = "New Book"
 		@book = Book.new
+
+		# This if block is to disallow users to reach the new 
+		# page if they arent logged in or an admin
+		if !user_signed_in? || !current_user.admin 
+			redirect_to books_path
+		end	
+
 	end
 
 	def create
@@ -46,6 +53,11 @@ class BooksController < ApplicationController
 	def edit
 		@title = "Edit Book"
 		@book = Book.find(params[:id])
+
+		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+			redirect_to books_path
+		end
+
 	end
 
 	def update
@@ -67,7 +79,7 @@ class BooksController < ApplicationController
 
 	private 
 
-		def book_params
+	def book_params
 			#  whitelisting params(strong params)
 			params.require(:book).permit(:title, :author, :published_year, :image_url)
 		end
@@ -78,4 +90,4 @@ class BooksController < ApplicationController
 			end
 		end
 
-end
+	end

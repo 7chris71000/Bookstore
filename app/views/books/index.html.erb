@@ -15,7 +15,11 @@
             <!-- </ul> -->
             <!--END filtering-nav-->          	
 
-            <%= link_to "Add New Book", "/books/new", class: "btn-dark-add-book" %>
+            <% if user_signed_in? %>
+              <% if current_user.admin %>
+                <%= link_to "Add New Book", "/books/new", class: "btn-dark-add-book" %>
+              <% end %>
+            <% end %>
 
             <div class="portfolio-container">
             	<ul>
@@ -28,13 +32,13 @@
 
             				<div class="book-cover-container">
             					<%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
-            					<%= link_to "View Details", "/books/#{book.id}", class: "view-details" %>
+            					<%= link_to "View Details", book_path(book.id), class: "view-details" %>
             				</div>
 
             				<!-- </a> -->
             			</p>
             			<h4 class="book-author">
-            				<%= link_to book.title, "#" %>
+            				<%= link_to book.title, book_path(book.id) %>
             			</h4>
             			<p class="book-author">
             				<%= book.author %>
