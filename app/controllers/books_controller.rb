@@ -24,6 +24,11 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
+
+		if !user_signed_in? || !current_user.admin
+			redirect_to books_path
+		end
+
 		if @book.save
 			redirect_to '/books'
 		else
@@ -62,6 +67,11 @@ class BooksController < ApplicationController
 
 	def update
 		@book = Book.find(params[:id])
+
+		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+			redirect_to books_path
+		end
+
 		if @book.update(book_params)
 			redirect_to "/books/#{@book.id}"
 		else
@@ -72,6 +82,11 @@ class BooksController < ApplicationController
 
 	def destroy
 		@book = Book.find(params[:id])
+
+		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+			redirect_to books_path
+		end
+
 		@book.destroy
 		redirect_to "/books"
 	end
