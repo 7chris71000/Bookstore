@@ -1,5 +1,7 @@
 class BooksController < ApplicationController
 
+	include SessionsHelper
+
 	before_action :set_book, only: [:show, :edit, :update, :destroy]
 	before_action :deny_access_for_non_authors, only: [:edit, :update, :destroy]
 	before_action :deny_access_for_non_admin, only: [:create, :new]
@@ -9,7 +11,6 @@ class BooksController < ApplicationController
 	# before_action :deny_access_for_non_signed_in_users
 
 	def index
-
 		@title = "Books"
 		@books = Book.all
 
@@ -80,7 +81,7 @@ class BooksController < ApplicationController
 		end
 
 		def deny_access_for_non_admin
-			if !user_signed_in? || !current_user.admin
+			if !admin?
 				redirect_to books_path
 			end
 		end
