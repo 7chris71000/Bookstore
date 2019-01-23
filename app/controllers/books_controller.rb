@@ -1,5 +1,10 @@
 class BooksController < ApplicationController
 
+	before_action :set_book, only: [:show, :edit, :update, :destroy]
+	before_action :deny_access_for_non_authors, only: [:edit, :update, :destroy]
+	before_action :deny_access_for_non_admin, only: [:create, :new]
+
+
 	# This runs before every method call. Checks if user is signed in
 	# before_action :deny_access_for_non_signed_in_users
 
@@ -13,21 +18,10 @@ class BooksController < ApplicationController
 	def new
 		@title = "New Book"
 		@book = Book.new
-
-		# This if block is to disallow users to reach the new 
-		# page if they arent logged in or an admin
-		if !user_signed_in? || !current_user.admin 
-			redirect_to books_path
-		end	
-
 	end
 
 	def create
 		@book = Book.new(book_params)
-
-		if !user_signed_in? || !current_user.admin
-			redirect_to books_path
-		end
 
 		if @book.save
 			redirect_to '/books'
@@ -39,38 +33,13 @@ class BooksController < ApplicationController
 
 	def show
 		@title = "Books Show"
-		@book = Book.find(params[:id])
-
-		# random number list to populate 5 'related' books under product
-		# array is populated with 5 unique random numbers used to find id from DB
-		@randomNumArray = [] 
-		i = 0 # counter to determine when 5 numbers have been added to array
-		largestId = Book.last.id
-		# while i < 5 do  
-		# 	randNum = rand(1..largestId)
-		# 	if(!@randomNumArray.include? randNum) # ensures that the number isnt in the array
-		# 		@randomNumArray[i] = randNum
-		# 		i += 1;
-		# 	end
-		# end
 	end
 
 	def edit
 		@title = "Edit Book"
-		@book = Book.find(params[:id])
-
-		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
-			redirect_to books_path
-		end
-
 	end
 
 	def update
-		@book = Book.find(params[:id])
-
-		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
-			redirect_to books_path
-		end
 
 		if @book.update(book_params)
 			redirect_to "/books/#{@book.id}"
@@ -81,11 +50,6 @@ class BooksController < ApplicationController
 	end
 
 	def destroy
-		@book = Book.find(params[:id])
-
-		if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
-			redirect_to books_path
-		end
 
 		@book.destroy
 		redirect_to "/books"
@@ -94,7 +58,7 @@ class BooksController < ApplicationController
 
 	private 
 
-	def book_params
+		def book_params
 			#  whitelisting params(strong params)
 			params.require(:book).permit(:title, :author, :published_year, :image_url)
 		end
@@ -104,5 +68,22 @@ class BooksController < ApplicationController
 				redirect_to root_path
 			end
 		end
+
+		def set_book
+			@book = Book.find(params[:id])
+		end
+
+		def deny_access_for_non_authors
+			if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+				redirect_to books_path
+			end
+		end
+
+		def deny_access_for_non_admin
+			if !user_signed_in? || !current_user.admin
+				redirect_to books_path
+			end
+		end
+
 
 	end
