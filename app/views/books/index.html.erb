@@ -4,18 +4,12 @@
 <body>
 	<div class="container">
 		<div id="portfolio">
-			<!-- <ul id="filterable"> -->
-				<!-- <li class="first"><h5>Sort by:</h5></li> -->
-				<!-- <li class="current"><a class="all" href="#all">Create New Book</a></li> -->
-            <!-- <li><a class="new" href="#new">New</a></li>
-            <li><a class="fiction" href="#fiction">Fiction</a></li>
-            <li><a class="non-fiction" href="#non-fiction">Non-Fiction</a></li>
-            <li><a class="all" href="#popular">Popular</a></li> -->
 
-            <!-- </ul> -->
-            <!--END filtering-nav-->          	
 
-            <%= link_to "Add New Book", "/books/new", class: "btn-dark-add-book" %>
+            <% if admin? %>
+
+                <%= link_to "Add New Book", "/books/new", class: "btn-dark-add-book" %>
+            <% end %>
 
             <div class="portfolio-container">
             	<ul>
@@ -26,28 +20,28 @@
             			<p>
             				<!-- <a href="#"> -->
 
-            				<div class="book-cover-container">
-            					<%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
-            					<%= link_to "View Details", "/books/#{book.id}", class: "view-details" %>
-            				</div>
+                                <div class="book-cover-container">
+                                   <%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
+                                   <%= link_to "View Details", book_path(book.id), class: "view-details" %>
+                               </div>
 
-            				<!-- </a> -->
-            			</p>
-            			<h4 class="book-author">
-            				<%= link_to book.title, "#" %>
-            			</h4>
-            			<p class="book-author">
-            				<%= book.author %>
-            			</p>
-            		</li>
-            		<% end %>
+                               <!-- </a> -->
+                           </p>
+                           <h4 class="book-author">
+                            <%= link_to book.title, book_path(book.id) %>
+                        </h4>
+                        <p class="book-author">
+                            <%= book.author %>
+                        </p>
+                    </li>
+                    <% end %>
 
-            	</ul>
-            		<!--END ul-->
-            	</div>
+                </ul>
+                <!--END ul-->
+            </div>
 
 
-            	<!--END portfolio-wrap-->
+            <!--END portfolio-wrap-->
         </div>
         <br clear="both">
         <br clear="both">
