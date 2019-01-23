@@ -61,7 +61,7 @@ class BooksController < ApplicationController
 
 		def book_params
 			#  whitelisting params(strong params)
-			params.require(:book).permit(:title, :author, :published_year, :image_url)
+			params.require(:book).permit(:title, :user_id, :published_year, :image_url)
 		end
 
 		def deny_access_for_non_signed_in_users

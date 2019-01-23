@@ -5,7 +5,9 @@
     <div class="panes">
       <div> <%= @book.image_url.present? ? image_tag(@book.image_url) : image_tag("no_image_found.jpg")%> 
         <h2><%= @book.title %></h2>
-        <h5>Author: <%= @book.author %></h5>
+        <% if(@book.user.present?) %>
+          <h5>Author: <%= @book.user.name %></h5>
+        <%end%>
         <h3><%= @book.price.present? ? ("$" + @book.price) : ("N/A") %></h3> 
         <p> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
@@ -39,26 +41,7 @@
 
     <!-- This will be dynamic eventually but static for now -->
 
-    <h2 class="related-title">Related Books:</h2>
-    <div class="prod_nav">
-      <ul>
-        <% @randomNumArray.each do | i | %>
-        <% book = Book.find(i) %>
-        <% route = "/books/#{i}" %>
-        <li>
-          <a href = <%= route %> > 
-            <div class="book-cover-container">
-              <%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %> 
-              <%#= link_to "View Details", "/books/#{book.id}", class: "view-details" %>
-              </div>
-              <strong> <%= book.title %> </strong>
 
-            
-          </a>
-        </li>
-        <% end %>
-      </ul>
-    </div>
     <!-- close navigator -->
     <br clear="both">
     <!--</div>-->
