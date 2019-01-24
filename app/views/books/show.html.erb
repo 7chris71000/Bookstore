@@ -18,7 +18,7 @@
         </p>
         
         <% if user_signed_in? %>
-          <% if current_user.name == @book.author || current_user.admin %>
+          <% if current_user.id == @book.user_id || current_user.admin %>
             <%= link_to "Edit", "/books/#{@book.id}/edit" %> <br>
           <% end %>
           <% if current_user.admin %>

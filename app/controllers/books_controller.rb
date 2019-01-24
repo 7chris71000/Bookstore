@@ -75,7 +75,7 @@ class BooksController < ApplicationController
 		end
 
 		def deny_access_for_non_authors
-			if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+			if(!user_signed_in? || (!current_user.admin && current_user.id != @book.user_id)) 
 				redirect_to books_path
 			end
 		end

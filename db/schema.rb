@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_23_224200) do
+ActiveRecord::Schema.define(version: 2019_01_24_222938) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.string "title"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2019_01_23_224200) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url"
