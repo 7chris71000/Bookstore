@@ -5,10 +5,11 @@
     <div class="panes">
       <div> <%= @book.image_url.present? ? image_tag(@book.image_url) : image_tag("no_image_found.jpg")%> 
         <h2><%= @book.title %></h2>
+
         <% if(@book.user.present?) %>
           <h5>Author: <%= @book.user.name %></h5>
         <%end%>
-        <h3><%= @book.price.present? ? ("$" + @book.price) : ("N/A") %></h3> 
+
         <p> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
           Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
@@ -37,10 +38,6 @@
 
 
     <%= link_to "Reviews", book_reviews_path(@book) %>
-
-
-    <!-- This will be dynamic eventually but static for now -->
-
 
     <!-- close navigator -->
     <br clear="both">
