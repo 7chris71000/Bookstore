@@ -61,7 +61,7 @@ class BooksController < ApplicationController
 
 		def book_params
 			#  whitelisting params(strong params)
-			params.require(:book).permit(:title, :author, :published_year, :image_url)
+			params.require(:book).permit(:title, :user_id, :published_year, :image_url)
 		end
 
 		def deny_access_for_non_signed_in_users
@@ -75,7 +75,7 @@ class BooksController < ApplicationController
 		end
 
 		def deny_access_for_non_authors
-			if(!user_signed_in? || (!current_user.admin && current_user.name != @book.author)) 
+			if(!user_signed_in? || (!current_user.admin && current_user.id != @book.user_id)) 
 				redirect_to books_path
 			end
 		end
