@@ -13,7 +13,7 @@
 <%= form_for([@book, @review]) do |f| %>
 
 	<%= f.label(:author) %><br>
-	<%= f.text_field(:author) %> <br>
+	<%= f.collection_select(:author, User.all, :name, :name, :prompt => true) %> <br>
 	<%= f.label(:star_rating) %> <br>
 	<%= f.text_field(:star_rating) %> <br>
 	<%= f.label(:comment) %> <br>

@@ -5,7 +5,11 @@
     <div class="panes">
       <div> <%= @book.image_url.present? ? image_tag(@book.image_url) : image_tag("no_image_found.jpg")%> 
         <h2><%= @book.title %></h2>
-        <h5>Author: <%= @book.author %></h5>
+
+        <% if(@book.user.present?) %>
+          <h5>Author: <%= @book.user.name %></h5>
+        <%end%>
+
         <p> 
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin neque erat, posuere in elementum et, commodo et neque.
           Nullam tristique nec neque vitae porttitor. In ligula enim, tincidunt eu laoreet at, aliquam sed erat. Morbi iaculis interdum
@@ -15,7 +19,7 @@
         </p>
         
         <% if user_signed_in? %>
-          <% if current_user.name == @book.author || current_user.admin %>
+          <% if current_user.id == @book.user_id || current_user.admin %>
             <%= link_to "Edit", "/books/#{@book.id}/edit" %> <br>
           <% end %>
           <% if current_user.admin %>
