@@ -3,12 +3,29 @@
 
 
 
-<%= image_tag("no_image_found.jpg") %>
-
-
+<div id="message">
+	Hello
+</div>
+<a href="#" id="my-link">
+	click
+</a>
 
 <% if @logged_in %>
 	<a href="#">Sign Out</a>
 <% else %>
 	<a href="#">Sign In</a>
 <% end %>
+
+
+<script type="text/javascript">
+	var buttonElement = document.getElementById("my-link");
+	console.log(buttonElement);
+
+	var changeMessage = function(event){
+		event.preventDefault();
+		console.log("Change message called");
+	};
+
+	buttonElement.addEventListener("click", changeMessage);
+
+</script>
