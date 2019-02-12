@@ -40,6 +40,8 @@ Rails.application.routes.draw do
 
   resources :blog_posts
 
+  get "/checkout" => "checkout#index"
+
 
 
 end

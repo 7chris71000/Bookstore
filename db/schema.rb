@@ -25,15 +25,7 @@ ActiveRecord::Schema.define(version: 2019_01_24_222938) do
     t.datetime "updated_at", null: false
     t.string "image_url"
     t.integer "published_year"
-    t.decimal "price"
     t.integer "user_id"
-  end
-
-  create_table "post_tags", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -41,12 +33,6 @@ ActiveRecord::Schema.define(version: 2019_01_24_222938) do
     t.integer "star_rating"
     t.text "comment"
     t.integer "book_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

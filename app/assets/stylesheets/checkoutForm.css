@@ -2,6 +2,9 @@
 /*- Checkout Payment Form -*/
 /************************************************************************************/
 
+.checkout-form > input, label{
+    display: block;
+}
 
 .checkout-req{
     color: red;
@@ -29,4 +32,12 @@
     float: right;
     margin-top: -20px;
     margin-right: 10px;
+}
+
+.field-success {
+    color: green;
+}
+
+.hidden-submit {
+    visibility: hidden;
 }
