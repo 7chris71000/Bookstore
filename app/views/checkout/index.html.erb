@@ -1,0 +1,160 @@
+<div id="containerId" class="one-half">
+  <div class="checkout-form" id="checkout-form">
+    <h2>Checkout</h2>
+    <label>Given Name <span class="required">*</span>
+      <span id="firstReq" class="checkout-req"> Error in field.</span>
+    </label>
+    <input type="text" name="name" id="first-name">
+
+    <label>Family Name <span class="required">*</span>
+      <span id="lastReq" class="checkout-req"> Error in field.</span>
+    </label>
+    <input type="text" name="name" id="last-name">
+
+    <label>Postal Code<span class="required">*</span>
+      <span id="telephoneReq" class="checkout-req"> Error in field.</span>
+    </label>
+    <input type="text" name="telephone" id="postal">
+
+    <label>E-Mail<span class="required">*</span>
+      <span id="emailReq" class="checkout-req"> Error in field.</span>
+    </label>
+    <input type="text" name="email" id="email">
+
+    <div id="buttonDiv">
+      <button id="submitFormHidden" class="hidden-submit">Submit</button>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+        //create variables to addEventListener to
+        var givenName = document.getElementById("first-name");
+        var familyName = document.getElementById("last-name");
+        var postal = document.getElementById("postal");
+        var email = document.getElementById("email");
+        var submitForm = document.getElementById("submitFormHidden");
+        var pageDiv = document.getElementById("checkout-form");
+
+        var submitElement = document.createElement("button");
+        submitElement.id = "submitFormCreate";
+        var submitText = document.createTextNode("Submit");
+        submitElement.appendChild(submitText);
+
+        //regex expression that accepts a-z A-Z and spaces
+        var nameRegex = /^[a-zA-Z ]+$/;
+        //regex expression that that works MOST of the time. 
+        //Since there is no perfect way to validate email other than user accepting validation email this will do for now.
+        var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //regex expression that accepts a code in the form of XYXYXY where X is a letter and Y is a single digit integer
+        var postalRegex = /^[a-zA-Z][0-9][a-zA-Z][ -]?[0-9][a-zA-Z][0-9]$/
+
+        givenName.addEventListener("keyup", function () {
+          if(nameRegex.test(givenName.value)){
+            givenName.className = "field-success";
+          } else {
+            givenName.className = "";
+          }
+
+          if (
+            givenName.className == "field-success" &&
+            familyName.className == "field-success" &&
+            postal.className == "field-success" &&
+            email.className == "field-success"
+            ){
+            submitForm.className = ""; //Unhide
+            document.getElementById("buttonDiv").appendChild(submitElement); //Create
+
+          } else {
+            submitForm.className = "hidden-submit"; //Unhide
+            submitElement.remove(); //Create
+          }
+      });
+        familyName.addEventListener("keyup", function () {
+          if(nameRegex.test(familyName.value)){
+            familyName.className = "field-success";
+          } else {
+            familyName.className = "";
+          }
+
+          if (
+            givenName.className == "field-success" &&
+            familyName.className == "field-success" &&
+            postal.className == "field-success" &&
+            email.className == "field-success"
+            ){
+            submitForm.className = ""; //Unhide
+            document.getElementById("buttonDiv").appendChild(submitElement); //Create
+
+          } else {
+            submitForm.className = "hidden-submit"; //Unhide
+            submitElement.remove(); //Create
+          }
+      });
+        postal.addEventListener("keyup", function () {
+          if(postalRegex.test(postal.value)){
+            postal.className = "field-success";
+          } else {
+            postal.className = "";
+          }
+
+          if (
+            givenName.className == "field-success" &&
+            familyName.className == "field-success" &&
+            postal.className == "field-success" &&
+            email.className == "field-success"
+            ){
+            submitForm.className = ""; //Unhide
+            document.getElementById("buttonDiv").appendChild(submitElement); //Create
+
+          } else {
+            submitForm.className = "hidden-submit"; //Unhide
+            submitElement.remove(); //Create
+          }
+      });
+        email.addEventListener("keyup", function () {
+          if(emailRegex.test(email.value)){
+            email.className = "field-success";
+          } else {
+            email.className = "";
+          }
+
+          if (
+            givenName.className == "field-success" &&
+            familyName.className == "field-success" &&
+            postal.className == "field-success" &&
+            email.className == "field-success"
+            ){
+            submitForm.className = ""; //Unhide
+            document.getElementById("buttonDiv").appendChild(submitElement); //Create
+
+          } else {
+            submitForm.className = "hidden-submit"; //Unhide
+            submitElement.remove(); //Create
+          }
+        });
+
+        //Unhide
+        submitForm.addEventListener("click", function(){
+          pageDiv.remove();
+
+          var thankYouElement = document.createElement("b");
+          var thankYouMessage = document.createTextNode("Thank you for your purchase.");
+          thankYouElement.appendChild(thankYouMessage);
+          document.getElementById("containerId").appendChild(thankYouElement);
+        });
+
+        //Create
+        submitElement.addEventListener("click", function(){
+          pageDiv.remove();
+
+          var thankYouElement = document.createElement("b");
+          var thankYouMessage = document.createTextNode("Thank you for your purchase.");
+          thankYouElement.appendChild(thankYouMessage);
+          document.getElementById("containerId").appendChild(thankYouElement);
+        });
+
+      </script>
+    </body>
+    </html>
