@@ -72,3 +72,5 @@ gem 'loofah', '>= 2.2.3'
 
 # Gem devise used for user authentication
 gem 'devise'
+
+gem 'rabl'
