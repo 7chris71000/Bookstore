@@ -5,6 +5,12 @@ class ToysController < ApplicationController
 	def index
 		@title = "Toys"
 		@toys = Toy.all
+
+		respond_to do |format|
+			format.html
+			format.json		
+		end
+
 	end
 
 	def new
@@ -40,6 +46,12 @@ class ToysController < ApplicationController
 		@toy = Toy.find(params[:id])
 
 		@title = "#{@toy.name}"
+
+		respond_to do |format|
+			format.html
+			format.json
+		end
+
 
 		# random number list to populate 5 'related' toys under product
 		# array is populated with 5 unique random numbers used to find id from DB

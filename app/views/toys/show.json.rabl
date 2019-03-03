@@ -1,0 +1,3 @@
+object @toy
+
+attributes :name
