@@ -39,6 +39,12 @@ class BooksController < ApplicationController
 
 	def show
 		@title = "Books Show"
+
+		respond_to do |format|
+			format.html
+			format.json
+		end
+
 	end
 
 	def edit
