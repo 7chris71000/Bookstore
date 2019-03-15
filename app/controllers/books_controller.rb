@@ -12,11 +12,14 @@ class BooksController < ApplicationController
 
 	def index
 		@title = "Books"
-		@books = Book.all
 
 		respond_to do |format|
-			format.html 
-			format.json 
+			format.html {
+
+			} 
+			format.json {
+				@books = Book.all
+			}
 			
 		end
 	end

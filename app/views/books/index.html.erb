@@ -1,47 +1,51 @@
 	<div class="container">
 		<div id="portfolio">
 
-
       <% if admin? %>
 
       <%= link_to "Add New Book", "/books/new", class: "btn-dark-add-book" %>
       <% end %>
-
+      <%= link_to 'Load Books', '#', id: 'load-books-link'%>
       <div class="portfolio-container">
        <ul>
 
-        <% @books.each do | book | %>
-
-        <li class="one-fourth">
-         <p>
-          <!-- <a href="#"> -->
-
-            <div class="book-cover-container">
-             <%= book.image_url.present? ? image_tag(book.image_url, height: '238', width: '160') : image_tag("no_image_found.jpg", height: '238', width: '160') %>
-             <%= link_to "View Details", book_path(book.id), class: "view-details" %>
-           </div>
-
-           <!-- </a> -->
-         </p>
-         <h4 class="book-author">
-          <%= link_to book.title, book_path(book.id) %>
-        </h4>
-        <p class="book-author">
-          <% if(book.user.present?) %>
-          <%= book.user.name %>
-          <% end %>
-        </p>
-      </li>
-      <% end %>
-
-    </ul>
-    <!--END ul-->
-  </div>
+       </ul>
+     </div>
 
 
-  <!--END portfolio-wrap-->
-</div>
-<br clear="both">
-<br clear="both">
+     <!--END portfolio-wrap-->
+   </div>
+   <br clear="both">
+   <br clear="both">
 
-</div>
+ </div>
+
+ <script type="text/javascript">
+
+   var loadBooksLink = document.getElementById('load-books-link');
+
+  loadBooksLink.addEventListener("click", function(event){
+    event.preventDefault();
+    
+    $.ajax({
+      url: "/books",
+      method: "GET",
+      data: {
+        format: "json"
+      }, 
+      success: function(books){
+        alert("Successful request");
+        for(var i = 0; i < books.length; i++){
+          console.log(books[i].title);
+          //use this data to create html books
+          var submitElement = document.createElement("button");
+          submitElement.id = "submitFormCreate";
+          var submitText = document.createTextNode("Submit");
+          submitElement.appendChild(submitText);
+        }
+      }
+    });
+
+  });
+
+</script>
