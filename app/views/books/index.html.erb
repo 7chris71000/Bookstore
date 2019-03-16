@@ -7,7 +7,7 @@
       <% end %>
       <%= link_to 'Load Books', '#', id: 'load-books-link'%>
       <div class="portfolio-container">
-       <ul>
+       <ul id="ul-of-books">
 
        </ul>
      </div>
@@ -24,7 +24,7 @@
 
    var loadBooksLink = document.getElementById('load-books-link');
 
-  loadBooksLink.addEventListener("click", function(event){
+   loadBooksLink.addEventListener("click", function(event){
     event.preventDefault();
     
     $.ajax({
@@ -34,14 +34,58 @@
         format: "json"
       }, 
       success: function(books){
-        alert("Successful request");
+
+        // Delete load books link
+        loadBooksLink.remove();
+
+        var ulOfBooks = document.getElementById("ul-of-books");
+
         for(var i = 0; i < books.length; i++){
-          console.log(books[i].title);
-          //use this data to create html books
-          var submitElement = document.createElement("button");
-          submitElement.id = "submitFormCreate";
-          var submitText = document.createTextNode("Submit");
-          submitElement.appendChild(submitText);
+
+          console.log(books[i]);
+
+          // create the list element to append all information about book
+          var liOfBooks = document.createElement("li");
+          liOfBooks.className = "one-fourth";
+          ulOfBooks.appendChild(liOfBooks);
+
+          // add book image and view book link
+          var imageDiv = document.createElement("div");
+          imageDiv.className = "book-cover-container";
+          liOfBooks.appendChild(imageDiv);
+
+          const src = '<%= asset_path "no_image_found.jpg" %>';
+
+          var bookCoverImg = document.createElement("img");
+          bookCoverImg.src = src;
+          bookCoverImg.height = "238";
+          bookCoverImg.width = "160";
+          imageDiv.appendChild(bookCoverImg);
+
+          var bookCoverButton = document.createElement("a");
+          bookCoverButton.className = "view-details";
+          bookCoverButton.href = "/books/" + books[i].id;
+          var bookText = document.createTextNode("View Details");
+          bookCoverButton.appendChild(bookText);
+          imageDiv.appendChild(bookCoverButton);
+
+          // add title to each book
+          var bookTitleH4 = document.createElement("h4");
+          bookTitleH4.className = "book-author";
+          var titleLink = document.createElement("a");
+          titleLink.href = "/books/" + books[i].id;
+          var bookTitle = document.createTextNode(books[i].title);
+          titleLink.appendChild(bookTitle);
+          bookTitleH4.appendChild(titleLink);
+          liOfBooks.appendChild(bookTitleH4);
+
+          // add author
+          var bookTitleH4 = document.createElement("p");
+          bookTitleH4.className = "book-author";
+          var bookTitle = document.createTextNode(books[i].user ? books[i].user.name : "");
+          bookTitleH4.appendChild(bookTitle);
+          liOfBooks.appendChild(bookTitleH4);
+
         }
       }
     });
