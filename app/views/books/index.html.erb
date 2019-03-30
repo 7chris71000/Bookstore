@@ -22,74 +22,90 @@
 
  <script type="text/javascript">
 
-   var loadBooksLink = document.getElementById('load-books-link');
+  //write function that takes in callback and executes that callback
 
-   loadBooksLink.addEventListener("click", function(event){
-    event.preventDefault();
-    
-    $.ajax({
+  function callCallbackFunc(text, callback){
+    callback(text);
+  }
+
+  callCallbackFunc("Alert Message", function(alertText) {
+    alert(alertText);
+  });
+
+  var loadBooksIntoDom = function(books){
+      // Delete load books link
+      // loadBooksLink.remove();
+
+      var ulOfBooks = document.getElementById("ul-of-books");
+
+      ulOfBooks.innerHTML = "";
+
+      for(var i = 0; i < books.length; i++){
+
+        console.log(books[i]);
+
+        // create the list element to append all information about book
+        var liOfBooks = document.createElement("li");
+        liOfBooks.className = "one-fourth";
+        ulOfBooks.appendChild(liOfBooks);
+
+        // add book image and view book link
+        var imageDiv = document.createElement("div");
+        imageDiv.className = "book-cover-container";
+        liOfBooks.appendChild(imageDiv);
+
+        const src = '<%= asset_path "no_image_found.jpg" %>';
+
+        var bookCoverImg = document.createElement("img");
+        bookCoverImg.src = src;
+        bookCoverImg.height = "238";
+        bookCoverImg.width = "160";
+        imageDiv.appendChild(bookCoverImg);
+
+        var bookCoverButton = document.createElement("a");
+        bookCoverButton.className = "view-details";
+        bookCoverButton.href = "/books/" + books[i].id;
+        var bookText = document.createTextNode("View Details");
+        bookCoverButton.appendChild(bookText);
+        imageDiv.appendChild(bookCoverButton);
+
+        // add title to each book
+        var bookTitleH4 = document.createElement("h4");
+        bookTitleH4.className = "book-author";
+        var titleLink = document.createElement("a");
+        titleLink.href = "/books/" + books[i].id;
+        var bookTitle = document.createTextNode(books[i].title);
+        titleLink.appendChild(bookTitle);
+        bookTitleH4.appendChild(titleLink);
+        liOfBooks.appendChild(bookTitleH4);
+
+        // add author
+        var bookTitleH4 = document.createElement("p");
+        bookTitleH4.className = "book-author";
+        var bookTitle = document.createTextNode(books[i].user ? books[i].user.name : "");
+        bookTitleH4.appendChild(bookTitle);
+        liOfBooks.appendChild(bookTitleH4);
+      }
+
+    };
+
+    var fetchBooks = function(){
+     $.ajax({
       url: "/books",
       method: "GET",
       data: {
         format: "json"
       }, 
-      success: function(books){
+      success: loadBooksIntoDom
 
-        // Delete load books link
-        loadBooksLink.remove();
-
-        var ulOfBooks = document.getElementById("ul-of-books");
-
-        for(var i = 0; i < books.length; i++){
-
-          console.log(books[i]);
-
-          // create the list element to append all information about book
-          var liOfBooks = document.createElement("li");
-          liOfBooks.className = "one-fourth";
-          ulOfBooks.appendChild(liOfBooks);
-
-          // add book image and view book link
-          var imageDiv = document.createElement("div");
-          imageDiv.className = "book-cover-container";
-          liOfBooks.appendChild(imageDiv);
-
-          const src = '<%= asset_path "no_image_found.jpg" %>';
-
-          var bookCoverImg = document.createElement("img");
-          bookCoverImg.src = src;
-          bookCoverImg.height = "238";
-          bookCoverImg.width = "160";
-          imageDiv.appendChild(bookCoverImg);
-
-          var bookCoverButton = document.createElement("a");
-          bookCoverButton.className = "view-details";
-          bookCoverButton.href = "/books/" + books[i].id;
-          var bookText = document.createTextNode("View Details");
-          bookCoverButton.appendChild(bookText);
-          imageDiv.appendChild(bookCoverButton);
-
-          // add title to each book
-          var bookTitleH4 = document.createElement("h4");
-          bookTitleH4.className = "book-author";
-          var titleLink = document.createElement("a");
-          titleLink.href = "/books/" + books[i].id;
-          var bookTitle = document.createTextNode(books[i].title);
-          titleLink.appendChild(bookTitle);
-          bookTitleH4.appendChild(titleLink);
-          liOfBooks.appendChild(bookTitleH4);
-
-          // add author
-          var bookTitleH4 = document.createElement("p");
-          bookTitleH4.className = "book-author";
-          var bookTitle = document.createTextNode(books[i].user ? books[i].user.name : "");
-          bookTitleH4.appendChild(bookTitle);
-          liOfBooks.appendChild(bookTitleH4);
-
-        }
-      }
     });
 
+   };
+
+   loadBooksLink.addEventListener("click", function(event){
+    event.preventDefault();
+
+    fetchBooks();
   });
 
 </script>
