@@ -1,34 +1,34 @@
-<div id="containerId" class="one-half">
-  <div class="checkout-form" id="checkout-form">
-    <h2>Checkout</h2>
-    <label>Given Name <span class="required">*</span>
-      <span id="firstReq" class="checkout-req"> Error in field.</span>
-    </label>
-    <input type="text" name="name" id="first-name">
+<div class="checkout-index">
+  <div id="containerId" class="one-half">
+    <div class="checkout-form" id="checkout-form">
+      <h2>Checkout</h2>
+      <label>Given Name <span class="required">*</span>
+        <span id="firstReq" class="checkout-req"> Error in field.</span>
+      </label>
+      <input type="text" name="name" id="first-name">
 
-    <label>Family Name <span class="required">*</span>
-      <span id="lastReq" class="checkout-req"> Error in field.</span>
-    </label>
-    <input type="text" name="name" id="last-name">
+      <label>Family Name <span class="required">*</span>
+        <span id="lastReq" class="checkout-req"> Error in field.</span>
+      </label>
+      <input type="text" name="name" id="last-name">
 
-    <label>Postal Code<span class="required">*</span>
-      <span id="telephoneReq" class="checkout-req"> Error in field.</span>
-    </label>
-    <input type="text" name="telephone" id="postal">
+      <label>Postal Code<span class="required">*</span>
+        <span id="telephoneReq" class="checkout-req"> Error in field.</span>
+      </label>
+      <input type="text" name="telephone" id="postal">
 
-    <label>E-Mail<span class="required">*</span>
-      <span id="emailReq" class="checkout-req"> Error in field.</span>
-    </label>
-    <input type="text" name="email" id="email">
+      <label>E-Mail<span class="required">*</span>
+        <span id="emailReq" class="checkout-req"> Error in field.</span>
+      </label>
+      <input type="text" name="email" id="email">
 
-    <div id="buttonDiv">
-      <button id="submitFormHidden" class="hidden-submit">Submit</button>
+      <div id="buttonDiv">
+        <button id="submitFormHidden" class="hidden-submit">Submit</button>
+      </div>
     </div>
-
   </div>
 </div>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
         //create variables to addEventListener to
         var givenName = document.getElementById("first-name");
         var familyName = document.getElementById("last-name");
@@ -48,7 +48,7 @@
         //Since there is no perfect way to validate email other than user accepting validation email this will do for now.
         var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         //regex expression that accepts a code in the form of XYXYXY where X is a letter and Y is a single digit integer
-        var postalRegex = /^[a-zA-Z][0-9][a-zA-Z][ -]?[0-9][a-zA-Z][0-9]$/
+        var postalRegex = /^[a-zA-Z][0-9][a-zA-Z][ -]?[0-9][a-zA-Z][0-9]$/;
 
         givenName.addEventListener("keyup", function () {
           if(nameRegex.test(givenName.value)){
@@ -155,6 +155,6 @@
           document.getElementById("containerId").appendChild(thankYouElement);
         });
 
-      </script>
+      </script> -->
     </body>
     </html>
