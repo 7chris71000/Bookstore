@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/about" => "pages#about"
 
   get "/contact" => "pages#contact"
+
+  get "/test_react" => "pages#test_react"
   
 	# # Books resource
 

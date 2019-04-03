@@ -73,3 +73,5 @@ gem 'loofah', '>= 2.2.3'
 gem 'devise'
 
 gem 'rabl'
+
+gem 'webpacker', '~> 4.x'

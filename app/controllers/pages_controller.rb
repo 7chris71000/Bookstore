@@ -65,5 +65,8 @@ class PagesController < ApplicationController
 
 	end
 
+	def test_react
+	end
+
 
 end
