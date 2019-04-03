@@ -1,4 +1,5 @@
-	<div class="container">
+	<div class="book-index">
+  <div class="container">
 		<div id="portfolio">
 
       <% if admin? %>
@@ -19,22 +20,25 @@
    <br clear="both">
 
  </div>
+</div>
 
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
 
   //write function that takes in callback and executes that callback
 
-  function callCallbackFunc(text, callback){
-    callback(text);
-  }
+  // function callCallbackFunc(text, callback){
+  //   callback(text);
+  // }
 
-  callCallbackFunc("Alert Message", function(alertText) {
-    alert(alertText);
-  });
+  // callCallbackFunc("Alert Message", function(alertText) {
+  //   alert(alertText);
+  // });
+
+  loadBooksLink = document.getElementById("load-books-link");
 
   var loadBooksIntoDom = function(books){
       // Delete load books link
-      // loadBooksLink.remove();
+      loadBooksLink.remove();
 
       var ulOfBooks = document.getElementById("ul-of-books");
 
@@ -104,8 +108,9 @@
 
    loadBooksLink.addEventListener("click", function(event){
     event.preventDefault();
+    console.log("TEST");
 
     fetchBooks();
   });
 
-</script>
+</script> -->

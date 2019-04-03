@@ -1,23 +1,23 @@
+<div class="page-home">
+	<h1>Home</h1>
 
-<h1>Home</h1>
 
 
+	<div id="message">
+		Hello
+	</div>
+	<a href="#" id="my-link">
+		click
+	</a>
 
-<div id="message">
-	Hello
-</div>
-<a href="#" id="my-link">
-	click
-</a>
-
-<% if @logged_in %>
+	<% if @logged_in %>
 	<a href="#">Sign Out</a>
-<% else %>
+	<% else %>
 	<a href="#">Sign In</a>
-<% end %>
+	<% end %>
+</div>
 
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var buttonElement = document.getElementById("my-link");
 	console.log(buttonElement);
 
@@ -28,4 +28,4 @@
 
 	buttonElement.addEventListener("click", changeMessage);
 
-</script>
+</script> -->

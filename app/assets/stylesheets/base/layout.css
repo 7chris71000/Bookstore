@@ -1,0 +1,101 @@
+.container {
+    font-size: 1em;
+    /*width: 960px;*/
+    width: 1000px;
+    background: #FFF;
+    padding: 15px 20px;
+    margin: auto;
+    position: relative;
+    clear: both
+}
+
+.container ol li {
+    list-style: none
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.one, .one-half, .two-third, .one-third, .one-fourth, .one-fifth, .one-sixth, .index-body, .index-body2, .inner-content, .one-third-big {
+    float: left;
+}
+
+.one-half, .two-third, .one-third, .one-fourth, .one-fifth, .one-sixth, .index-body, .inner-content, .one-third-big {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+div#container > div.index-body2.index-body2-no-margin{
+    margin-right: 0;
+}
+
+div#container > div.index-body2.index-body2-margin{
+    margin-right: 10px;
+}
+
+.index-body h2{
+    font-family: "QuicksandBook", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.one {
+    width: 960px;
+}
+
+.one-half {
+    width: 465px;
+}
+
+.two-third {
+    width: 630px;
+}
+
+.one-third {
+    width: 300px;
+}
+
+.inner-content {
+    width: 712px;
+}
+
+.one-third-big {
+    width: 340px;
+}
+
+.one-fourth {
+    width: 217px;
+}
+
+.one-fifth {
+    width: 168px;
+}
+
+.one-sixth {
+    width: 135px;
+}
+
+.index-body {
+    width: 17%;
+}
+
+.index-body2 {
+    width: 75%;
+}
+
+.last {
+    margin-right: 0px !important;
+}
+
+.one-half.new-book-container{
+    text-align: center;
+
+    border-right: 1px solid #e3e3e3; 
+}

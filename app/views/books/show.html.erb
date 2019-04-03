@@ -1,6 +1,5 @@
 <div class="container">
   <!-- tab panes -->
-  <!--<div id="prod_wrapper">-->
     <%= link_to "Back to Books", "/books", class: "back-to-all-prod" %> <br>
     <div class="panes">
       <div> <%= @book.image_url.present? ? image_tag(@book.image_url) : image_tag("no_image_found.jpg")%> 
@@ -31,7 +30,6 @@
       </div>
     </div>
 
-    <!-- END tab panes -->
     <br clear="all">
     <div class="border-top"></div>
     <!-- navigator -->
@@ -41,5 +39,4 @@
 
     <!-- close navigator -->
     <br clear="both">
-    <!--</div>-->
   </div>
