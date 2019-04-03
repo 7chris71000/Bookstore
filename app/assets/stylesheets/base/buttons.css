@@ -1,0 +1,56 @@
+/*********/
+/*Buttons*/
+/*********/
+
+.btn-dark-add-book{
+    float: right;
+    margin-right: 15px;
+    padding: 10px;
+    background-color: #cccccc;
+    border-radius: 1rem; 
+    font-weight: bold;
+    border: 0.5px solid;
+}
+
+.view-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    
+    border-radius: 0.5rem;
+
+    padding: 10px;
+    background-color: #cccccc;
+
+    font-weight: bold;
+    border: 0.5px solid;
+}
+
+.view-details:hover {
+    color: #777777;
+}
+
+img:hover + .view-details, .view-details:hover {
+    display: inline-block;
+}
+
+.back-to-all-prod {
+    display:inline-block;
+    padding: 4.38px 5px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    border-radius: 0.5rem; 
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    text-align:center;
+    transition: all 0.2s;
+}
+
+.back-to-all-prod:hover {
+    color: black;
+    background-color: white;
+}

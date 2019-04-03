@@ -1,36 +1,6 @@
-
-.img-size{
-    width: 50px;
-    height: 71px;
-}
-
-.img-size-checkout{
-    margin-right: 22px;
-    margin-left: 20.45px;
-}
-
-.border-top{
-    border-top: 1px solid #e3e3e3;
-}
-
-.related-title{
-    margin-left: 50px;
-    margin-bottom: 0px;
-}
-
 /**************************************************************************************/
 /*- Product Viewer -*/
 /************************************************************************************/
-
-
-/* navigation */
-
-#prod_wrapper {
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-    margin-bottom: 30px;
-    padding: 10px 0 0
-}
 
 .prod_nav {
     height: 156px;
@@ -97,7 +67,6 @@
 }
 
 .panes div {
-    /*display: none;*/
     top: 20px;
     left: 20px;
     font-size: 14px;
@@ -124,7 +93,6 @@
     margin: 0 0 10px 0;
     font-size: 22px;
     font-weight: normal;
-    /*display: inline-block*/
 }
 
 .panes h5 {
@@ -138,7 +106,6 @@
     margin: 0 0 10px 0;
     font-size: 20px;
     font-weight: normal;
-    /*display: inline-block*/
 }
 
 .book-cover-container {
@@ -146,4 +113,13 @@
     text-align: center;
     color: white;
 
+}
+
+.border-top{
+    border-top: 1px solid #e3e3e3;
+}
+
+.related-title{
+    margin-left: 50px;
+    margin-bottom: 0px;
 }
