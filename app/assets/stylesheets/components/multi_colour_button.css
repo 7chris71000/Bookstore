@@ -1,0 +1,13 @@
+.red-bg{
+	background: red;
+	display: inline-block;
+}
+.blue-bg{
+	background: blue;
+	display: inline-block;
+}
+.green-bg{
+	background: green;
+	display: inline-block;
+}
+
