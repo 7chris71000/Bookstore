@@ -38,5 +38,8 @@ class MultiColourButton extends React.Component{
 
 document.addEventListener("DOMContentLoaded", function(){
 	const element = document.getElementById("my-component-mount-point");
-	ReactDOM.render(<MultiColourButton label="My Button" sublabel="My Sublabel" />, element);
+	ReactDOM.render(
+		<MultiColourButton label="My Button" sublabel="My Sublabel" />, 
+		element
+	);
 });

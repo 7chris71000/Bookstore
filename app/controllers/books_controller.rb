@@ -33,7 +33,15 @@ class BooksController < ApplicationController
 		@book = Book.new(book_params)
 
 		if @book.save
-			redirect_to '/books'
+			respond_to do |format|
+				format.html {
+					redirect_to '/books'
+				}
+				format.json {
+					render 'show'
+				}
+			end
+
 		else
 			render 'new'
 		end
